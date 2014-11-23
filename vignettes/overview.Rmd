@@ -69,7 +69,7 @@ win.dat <- score("2014-11-22") %>%
 	mutate(winner = reorder(winner, diff)) %>%
 	select(winner, diff) %>%
 	ggplot(aes(diff, winner)) + geom_point(aes(colour = winner), size = 3) + 
-	guides(col = guide_legend(reverse = TRUE))
+	theme(legend.position="none")
 win.dat
 
 ```	
