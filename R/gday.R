@@ -10,19 +10,31 @@
 #' Suffer no more! You can now ask R directly, without tempting yourself
 #' by firing up your web browser.
 #'
-#' @param team.name Defaults to "canucks"
-#' @return \code{TRUE} if \code{team.name} has an NHL game on \code{date},
+#' @param team The team name you wish you search for. Defaults to \code{Canucks}
+#' @param date Specified date to check whether the team is playing. Defaults to today's date
+#' @return \code{TRUE} if \code{team} has an NHL game on \code{date},
 #' \code{FALSE} otherwise
 #' @keywords misc
-#' @note case in \code{team.name} is ignored
+#' @note case in \code{team} is ignored
 #' @export
 #' @examples
 #' gday()
-#' gday("canadiens")
-#' gday("Bruins")
+#' gday("canucks")
+#' gday("Kings")
 
 
-gday <- function(team.name="canucks") {
-	url <- paste0("http://live.nhle.com/GameData/GCScoreboard/", Sys.Date(), ".jsonp")
-	grepl(team.name, getURL(url), ignore.case=TRUE)
+gday <- function(team = "canucks", date = Sys.Date()) {
+
+	assert_that(check_date(date))
+
+	if(internet_connection()) {
+
+		url <- paste0("http://live.nhle.com/GameData/GCScoreboard/", date, ".jsonp")
+
+		}else{
+
+		stop("You need to be connected to the internet for your NHL updates!")
+	}
+
+	grepl(team, getURL(url), ignore.case=TRUE)
 }

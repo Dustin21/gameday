@@ -1,9 +1,8 @@
-#' My first R package: gameday
+#' The gameday Package
 #'
-#' A one-line summary of what this package is for
+#' Tell R to find out if your favourite NHL team is playing on a specific date.
 #'
-#' Then we can add a larger paragraph
-#' that can span several lines
+#' 
 #'
 #' @docType package
 #' @name gameday

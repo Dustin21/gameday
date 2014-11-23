@@ -9,52 +9,71 @@ vignette: >
   %\usepackage[utf8]{inputenc}
 ---
 
-Dustin was here ;)
+## Introduction to gameday
 
-Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
+The gameday package enables you to stay up-to-date with your NHL needs without diverting your eyes from an R coding project. Check if your favourite NHL team is playing, or glance at the scores of the day to monitor your pool!
 
-- Never uses retina figures
-- Has a smaller default figure size
-- Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style
+## Getting Started
 
-## Vignette Info
+All you need to to is load the package!
 
-Note the various macros within the `vignette` setion of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
-
-## Styles
-
-The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
-
-    output: 
-      rmarkdown::html_vignette:
-        css: mystyles.css
-
-## Figures
-
-The figure sizes have been customised so that you can easily put two images side-by-side. 
-
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
+```{r}
+library(gameday)
 ```
 
-You can enable figure captions by `fig_caption: yes` in YAML:
+## Using gameday
 
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
+#### gday()
+Use the function `gday()` to find the times that your favourite hockey team is playing. For instance, I would like to know if the Vancouver Canucks are playing today:
 
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
-
-## More Examples
-
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
-
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
+```{r}
+# Check if Canucks are playing today
+gday() # default is set to today's date and 'Canucks'.
 ```
 
-Also a quote using `>`:
+Perhaps I would like to know if the Nashville Predators played on November 22, 2014. This can easily be done by setting the team and date:
 
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))
+```{r}
+# Did the Predators play on November 22, 2014
+gday(team = "predators", date = "2014-11-22")
+```
+
+How easy!
+
+#### score()
+The `score()` function is self-explanitory, as the only input is `date`. It simply provides the scores of all teams that played (or are playing) on a given date. This means, your scores can be update in real time! Let's say I wanted to know the scores of all games played today:
+
+```{r}
+score()
+```
+
+Or perhaps, I would like to know the scores of all teams that played on November 22, 2014.
+
+```{r}
+score(date = "2014-11-22")
+```
+
+If the entries are black, either no games have been played or you are attempting to predict the future.
+
+#### Winners of the Day
+
+We can also determine the winners of the day with the help of the `dplyr` package and make a nice plot of our results with `ggplot2`. 
+
+```{r}
+suppressPackageStartupMessages(library(dplyr))
+library(ggplot2)
+
+win.dat <- score("2014-11-22") %>%
+	mutate(winner = ifelse(home_score > away_score, as.character(home), as.character(away))) %>%
+	mutate(diff = ifelse(home_score > away_score, home_score-away_score, away_score-home_score)) %>%
+	mutate(winner = reorder(winner, diff)) %>%
+	select(winner, diff) %>%
+	ggplot(aes(diff, winner)) + geom_point(aes(colour = winner), size = 3) + 
+	guides(col = guide_legend(reverse = TRUE))
+win.dat
+
+```	
+	
+Use the `gameday` package and stay up to date with your game-to-game needs.
+
+

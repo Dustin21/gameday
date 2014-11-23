@@ -3,13 +3,15 @@
 \alias{gday}
 \title{Is it Gameday?}
 \usage{
-gday(team.name = "canucks")
+gday(team = "canucks", date = Sys.Date())
 }
 \arguments{
-\item{team.name}{Defaults to "canucks"}
+\item{team}{The team name you wish you search for. Defaults to \code{Canucks}}
+
+\item{date}{Specified date to check whether the team is playing. Defaults to today's date}
 }
 \value{
-\code{TRUE} if \code{team.name} has an NHL game on \code{date},
+\code{TRUE} if \code{team} has an NHL game on \code{date},
 \code{FALSE} otherwise
 }
 \description{
@@ -25,12 +27,12 @@ Suffer no more! You can now ask R directly, without tempting yourself
 by firing up your web browser.
 }
 \note{
-case in \code{team.name} is ignored
+case in \code{team} is ignored
 }
 \examples{
 gday()
-gday("canadiens")
-gday("Bruins")
+gday("canucks")
+gday("Kings")
 }
 \keyword{misc}
 
