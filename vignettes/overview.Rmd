@@ -57,7 +57,7 @@ If the entries are black, either no games have been played or you are attempting
 
 #### Winners of the Day
 
-We can also determine the winners of the day with the help of the `dplyr` package and make a nice plot of our results with `ggplot2`. 
+We can also determine the winners of the day with the help of the `dplyr` package and make a nice plot of the points gap with `ggplot2` to judge the magnitude of the win. 
 
 ```{r}
 suppressPackageStartupMessages(library(dplyr))
