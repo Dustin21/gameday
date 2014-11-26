@@ -5,6 +5,8 @@
 \alias{gameday-package}
 \title{The gameday Package}
 \description{
-Tell R to find out if your favourite NHL team is playing on a specific date.
+Tell R to find out if your favourite NHL team is playing on a specific date,
+or gather the scores of all teams on for a specific date. Stay up-to-date
+on that hockey pool!
 }
 
