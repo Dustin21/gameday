@@ -86,4 +86,4 @@ Use the `gameday` package and stay up to date with your game-to-game needs.
 
 Reworking this Gameday package really helped me understand the details of building a package, which inspired me to build my own. Incorporating and running the tests were my biggest source of confusion, but after some trial and error, I feel I got the hang of it. I am still wondering about more sophisticated functions. For instance, our gameday package required us to simply enter a country, but what if our function was more complex and required functions that depended on other data sets and functions, etc. Perhaps someone can give me some insight into how this would work?
 
-Follow this link for the second part of this homework - I will attempt to build my own package.
+Follow this [link](https://github.com/Dustin21/GP.Bagging) for the second part of this homework - I will attempt to build my own package.

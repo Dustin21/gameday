@@ -42,7 +42,7 @@ gday() # default is set to today's date and 'Canucks'.
 ```
 
 ```
-## [1] TRUE
+## [1] FALSE
 ```
 
 Perhaps I would like to know if the Nashville Predators played on November 22, 2014. This can easily be done by setting the team and date:
@@ -68,14 +68,16 @@ score()
 ```
 
 ```
-##                    home               away home_score away_score
-## 1 COLUMBUS BLUE JACKETS      WINNIPEG JETS          2          4
-## 2        ST LOUIS BLUES    OTTAWA SENATORS          2          3
-## 3   NASHVILLE PREDATORS  LOS ANGELES KINGS          4          3
-## 4          DALLAS STARS    EDMONTON OILERS          3          2
-## 5       ARIZONA COYOTES COLORADO AVALANCHE          3          4
-## 6     VANCOUVER CANUCKS  NEW JERSEY DEVILS          2          0
-## 7         ANAHEIM DUCKS     CALGARY FLAMES          3          2
+##                     home                away home_score away_score
+## 1         BUFFALO SABRES       WINNIPEG JETS                      
+## 2 NY ISLANDERS ISLANDERS WASHINGTON CAPITALS                      
+## 3      DETROIT RED WINGS PHILADELPHIA FLYERS                      
+## 4    TAMPA BAY LIGHTNING  NY RANGERS RANGERS                      
+## 5       FLORIDA PANTHERS CAROLINA HURRICANES                      
+## 6    PITTSBURGH PENGUINS TORONTO MAPLE LEAFS                      
+## 7         MINNESOTA WILD   LOS ANGELES KINGS                      
+## 8     COLORADO AVALANCHE  CHICAGO BLACKHAWKS                      
+## 9        SAN JOSE SHARKS      CALGARY FLAMES
 ```
 
 Or perhaps, I would like to know the scores of all teams that played on November 22, 2014.
@@ -131,4 +133,4 @@ Use the `gameday` package and stay up to date with your game-to-game needs.
 
 Reworking this Gameday package really helped me understand the details of building a package, which inspired me to build my own. Incorporating and running the tests were my biggest source of confusion, but after some trial and error, I feel I got the hang of it. I am still wondering about more sophisticated functions. For instance, our gameday package required us to simply enter a country, but what if our function was more complex and required functions that depended on other data sets and functions, etc. Perhaps someone can give me some insight into how this would work?
 
-Follow this link for the second part of this homework - I will attempt to build my own package.
+Follow this [link](https://github.com/Dustin21/GP.Bagging) for the second part of this homework - I will attempt to build my own package.

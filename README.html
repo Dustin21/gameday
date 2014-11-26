@@ -10,7 +10,7 @@
 
 <meta name="author" content="Dustin Johnson" />
 
-<meta name="date" content="2014-11-25" />
+<meta name="date" content="2014-11-26" />
 
 <title>Overview of Gameday</title>
 
@@ -55,7 +55,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <div id="header">
 <h1 class="title">Overview of Gameday</h1>
 <h4 class="author"><em>Dustin Johnson</em></h4>
-<h4 class="date"><em>2014-11-25</em></h4>
+<h4 class="date"><em>2014-11-26</em></h4>
 </div>
 
 
@@ -81,7 +81,7 @@ install_github(&quot;Dustin21/gameday&quot;)</code></pre>
 <p>Use the function <code>gday()</code> to find the times that your favourite hockey team is playing. For instance, I would like to know if the Vancouver Canucks are playing today:</p>
 <pre class="r"><code># Check if Canucks are playing today
 gday() # default is set to today's date and 'Canucks'.</code></pre>
-<pre><code>## [1] TRUE</code></pre>
+<pre><code>## [1] FALSE</code></pre>
 <p>Perhaps I would like to know if the Nashville Predators played on November 22, 2014. This can easily be done by setting the team and date:</p>
 <pre class="r"><code># Did the Predators play on November 22, 2014
 gday(team = &quot;predators&quot;, date = &quot;2014-11-22&quot;)</code></pre>
@@ -92,14 +92,16 @@ gday(team = &quot;predators&quot;, date = &quot;2014-11-22&quot;)</code></pre>
 <h4>score()</h4>
 <p>The <code>score()</code> function is self-explanatory, as the only input is <code>date</code>. It simply provides the scores of all teams that played (or are playing) on a given date. This means, your scores can be update in real time! Let’s say I wanted to know the scores of all games played today:</p>
 <pre class="r"><code>score()</code></pre>
-<pre><code>##                    home               away home_score away_score
-## 1 COLUMBUS BLUE JACKETS      WINNIPEG JETS          2          4
-## 2        ST LOUIS BLUES    OTTAWA SENATORS          2          3
-## 3   NASHVILLE PREDATORS  LOS ANGELES KINGS          4          3
-## 4          DALLAS STARS    EDMONTON OILERS          3          2
-## 5       ARIZONA COYOTES COLORADO AVALANCHE          3          4
-## 6     VANCOUVER CANUCKS  NEW JERSEY DEVILS          2          0
-## 7         ANAHEIM DUCKS     CALGARY FLAMES          3          2</code></pre>
+<pre><code>##                     home                away home_score away_score
+## 1         BUFFALO SABRES       WINNIPEG JETS                      
+## 2 NY ISLANDERS ISLANDERS WASHINGTON CAPITALS                      
+## 3      DETROIT RED WINGS PHILADELPHIA FLYERS                      
+## 4    TAMPA BAY LIGHTNING  NY RANGERS RANGERS                      
+## 5       FLORIDA PANTHERS CAROLINA HURRICANES                      
+## 6    PITTSBURGH PENGUINS TORONTO MAPLE LEAFS                      
+## 7         MINNESOTA WILD   LOS ANGELES KINGS                      
+## 8     COLORADO AVALANCHE  CHICAGO BLACKHAWKS                      
+## 9        SAN JOSE SHARKS      CALGARY FLAMES</code></pre>
 <p>Or perhaps, I would like to know the scores of all teams that played on November 22, 2014.</p>
 <pre class="r"><code>score(date = &quot;2014-11-22&quot;)</code></pre>
 <pre><code>##                      home                  away home_score away_score
@@ -139,7 +141,7 @@ win.dat</code></pre>
 <div id="reflections" class="section level2">
 <h2>Reflections</h2>
 <p>Reworking this Gameday package really helped me understand the details of building a package, which inspired me to build my own. Incorporating and running the tests were my biggest source of confusion, but after some trial and error, I feel I got the hang of it. I am still wondering about more sophisticated functions. For instance, our gameday package required us to simply enter a country, but what if our function was more complex and required functions that depended on other data sets and functions, etc. Perhaps someone can give me some insight into how this would work?</p>
-<p>Follow this link for the second part of this homework - I will attempt to build my own package.</p>
+<p>Follow this <a href="https://github.com/Dustin21/GP.Bagging">link</a> for the second part of this homework - I will attempt to build my own package.</p>
 </div>
 
 
