@@ -13,13 +13,21 @@ vignette: >
 
 The gameday package enables you to stay up-to-date with your NHL needs without diverting your eyes from an R coding project. Check if your favourite NHL team is playing, or glance at the scores of the day to monitor your pool!
 
-## Getting Started
+## Installation
 
-All you need to to is load the package!
+You can install the `gameday` package simply as follows:
+
+```{r, eval=FALSE}
+library(devtools)
+install_github("Dustin21/gameday")
+```
+
+Then load it from your library.
 
 ```{r}
 library(gameday)
 ```
+
 
 ## Using gameday
 
