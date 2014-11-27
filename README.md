@@ -13,7 +13,7 @@ You can install the `gameday` package simply as follows:
 
 ```r
 library(devtools)
-install_github("Dustin21/gameday")
+install_github("Dustin21/gameday", build_vignettes = TRUE)
 ```
 
 Then load it from your library.
@@ -68,16 +68,8 @@ score()
 ```
 
 ```
-##                     home                away home_score away_score
-## 1         BUFFALO SABRES       WINNIPEG JETS                      
-## 2 NY ISLANDERS ISLANDERS WASHINGTON CAPITALS                      
-## 3      DETROIT RED WINGS PHILADELPHIA FLYERS                      
-## 4    TAMPA BAY LIGHTNING  NY RANGERS RANGERS                      
-## 5       FLORIDA PANTHERS CAROLINA HURRICANES                      
-## 6    PITTSBURGH PENGUINS TORONTO MAPLE LEAFS                      
-## 7         MINNESOTA WILD   LOS ANGELES KINGS                      
-## 8     COLORADO AVALANCHE  CHICAGO BLACKHAWKS                      
-## 9        SAN JOSE SHARKS      CALGARY FLAMES
+##                  home            away home_score away_score
+## 1 NASHVILLE PREDATORS EDMONTON OILERS
 ```
 
 Or perhaps, I would like to know the scores of all teams that played on November 22, 2014.
